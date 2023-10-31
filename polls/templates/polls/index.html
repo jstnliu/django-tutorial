@@ -1,0 +1,18 @@
+<!-- STEP 13: Adding a html for all polls index -->
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+    <!-- STEP 19: Can change below code -->
+        <!-- <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li> -->
+    <!-- Should read: -->
+    <!-- this way looks up URL definition as specified in the 'polls.urls' modules -->
+    <!-- travel to polls/urls.py -->
+
+    <!-- STEP 22: update link with 'polls' namespace -->
+    <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    <!-- travel to detail.html -->
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}

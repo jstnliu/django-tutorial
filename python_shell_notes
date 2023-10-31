@@ -1,0 +1,24 @@
+# run: 'python manage.py shell' 
+#     - starts up shell w/ the import path to 'mysite/settings.py'
+
+# IN SHELL COMMANDS:
+
+# >>> from examples.models import Model1, Model2
+# ... imports model classes to shell 
+
+# >>> ModelName.objects.all()
+# ... returns all created objects using specified Model
+
+# STEP 7: 
+# -- Create a new Question for polls-proj --
+# >>> python manage.py shell
+# >>> from polls.models import Question, Choice
+# support for time zones is enabled in the default settings file, so:
+#     'timezone.now()' will run properly here
+# >>> from django.utils import timezone 
+# >>> q = Question(question_text = "What's new?", pub_date = timezone.now())
+# >>> q.save()
+# to see the id of the newly created Question:
+# >>> q.id
+
+# BACK TO 'polls/models.py' for step 8
